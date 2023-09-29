@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex',
        
         flexDirection: "row",
-        marginTop:10,
+        marginTop:15,
        
         justifyContent: " space-evenly ",
         
