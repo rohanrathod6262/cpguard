@@ -32,7 +32,7 @@ const Footer = () => {
 
 
         <TouchableOpacity
-            onPress={() => navigation.navigate("Chat")}
+            onPress={() => navigation.navigate("Notification")}
             style={styles.chatButton}
         >
             <Entypo name="bell" size={24} color={colors.lightGray} />
