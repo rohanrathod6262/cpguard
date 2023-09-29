@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
-const backImage = require("../assets/backImage.png");
+const backImage = require("../assets/backImage.jpeg");
 
 export default function Signup({ navigation }) {
 
@@ -23,6 +23,17 @@ const onHandleSignup = () => {
       <View style={styles.whiteSheet} />
       <SafeAreaView style={styles.form}>
         <Text style={styles.title}>Sign Up</Text>
+
+        <TextInput
+        style={styles.input}
+        placeholder="Enter Your Name"
+        // autoCapitalize="none"
+        // autoCorrect={false}
+        // secureTextEntry={true}
+        // textContentType="password"
+        // value={password}
+        // onChangeText={(text) => setPassword(text)}
+      />
          <TextInput
         style={styles.input}
         placeholder="Enter email"
@@ -33,6 +44,19 @@ const onHandleSignup = () => {
         value={email}
         onChangeText={(text) => setEmail(text)}
       />
+      
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Number"
+        //autoCapitalize="none"
+        // autoCorrect={false}
+        // secureTextEntry={true}
+        // textContentType="password"
+        // value={password}
+        // onChangeText={(text) => setPassword(text)}
+      />
+      
+
       <TextInput
         style={styles.input}
         placeholder="Enter password"
@@ -43,6 +67,10 @@ const onHandleSignup = () => {
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
+     
+
+
+
       <TouchableOpacity style={styles.button} onPress={onHandleSignup}>
         <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Sign Up</Text>
       </TouchableOpacity>
@@ -65,7 +93,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: "orange",
+    color: "white",
     alignSelf: "center",
     paddingBottom: 24,
   },
