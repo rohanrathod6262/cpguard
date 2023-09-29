@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     box:{
         position: 'absolute',
         bottom: 5,
-        backgroundColor: "black",
+        backgroundColor: "grey",
         width: '100%',
     },
 

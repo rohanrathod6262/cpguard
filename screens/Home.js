@@ -36,6 +36,7 @@ const Home = () => {
 
   return (
     <>
+    <View style={{backgroundColor: "white"}}>
     <View style={styles.container}>
       <View >
         <View style={styles.card}>
@@ -60,7 +61,9 @@ const Home = () => {
        <Text style={styles.buttonText}>Add New Vehicle</Text>
      </TouchableOpacity>
      </View>
+     </View>
      <Footer/>
+     
    </>
   );
 };
@@ -72,6 +75,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     flexDirection: 'column',
+
     height: 550,
     width: 380
   },
@@ -145,7 +149,7 @@ const styles = StyleSheet.create({
     marginBottombottom: 20,
   },
   buttonback: {
-marginBottom:80,
+marginBottom:110,
 marginLeft:30,
 marginRight:30,
 

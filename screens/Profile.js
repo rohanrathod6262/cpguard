@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { View, TouchableOpacity, Button, Text, Image, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Button, Text, Image, StyleSheet, backgroundColor } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Footer from "./component/Footer";
-
+import EditProfile from "./EditProfile";
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -20,16 +20,24 @@ const Profile = () => {
     return (
         <>
             <View >
-
-
-
+            <TouchableOpacity style={styles.buttonContainer}>
+                        <Button  onPress={() => navigation.navigate("EditProfile")} style={{
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5
+                    }}
+                        title="Edit Profile" />
+                    </TouchableOpacity> 
+                
+                
                 <View style={styles.container}>
-                    <Image source={require('../assets/profile.png')} style={styles.image} />
+                    <Image source={require('../assets/profile.webp')} style={styles.image} />
                 </View>
+                <View style={styles.form}>
                 <Text
                     style={{
                         borderColor: "gray",
-                        borderWidth: 0.6,
+                        borderWidth: 0.9,
                         height: 1,
 
                     }} />
@@ -40,13 +48,14 @@ const Profile = () => {
                 <Text style={styles.number}>Numbber:  7887308177</Text>
                 {/* <Text style={styles.bio}>{user.bio}</Text>
             Add more user details if needed */}
-            <View style={{ flexDirection: 'row'}}>
-                <Text style={styles.privacyy}>Privacy:</Text>
-                <View style={{ marginLeft:10,  flexDirection: 'row'}}>
-                    <Button title="On" onPress={handleYesPress} />
-                    <Button title="Off" onPress={handleNoPress} />
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.privacyy}>Privacy:</Text>
+                    <View style={{ marginLeft: 10, flexDirection: 'row' }}>
+                        <Button title="On" onPress={handleYesPress} />
+                        <Button title="Off" onPress={handleNoPress} />
+                    </View>
                 </View>
-            </View>
+                </View>
             </View>
 
             <Footer />
@@ -63,16 +72,30 @@ const styles = StyleSheet.create({
         flex: 1,
 
         alignItems: 'center',
-        justifyContent: 'center',
+        
         padding: 20
     },
+
+    buttonContainer: {
+        flexDirection: 'row',     // sets the primary axis to horizontal
+        justifyContent: 'flex-end',  // aligns children to the end (right) on the primary axis
+        padding: 16,//
+        borderRadius: 20,
+    },
+    form: {
+        width: '80%',
+        marginTop:10,
+        marginLeft:30,
+        justifyContent: 'flex-start',
+      },
+
 
     image: {
         width: 100,
         height: 100,
         borderRadius: 40,
         marginBottom: 10,
-        marginTop: 50,
+        marginTop: 10,
 
     },
     name: {
@@ -86,7 +109,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 20,
         fontWeight: 'bold',
-        
+
     },
 
     email: {
@@ -104,5 +127,5 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         justifyContent: 'space-between',
     },
-   
+
 });
