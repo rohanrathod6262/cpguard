@@ -10,8 +10,13 @@ import Chat from './screens/Chat';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 import AddNewVeh from './screens/AddNewVeh';
+<<<<<<< HEAD
 import EditProfile from './screens/EditProfile';
 //
+=======
+
+
+>>>>>>> 31b59e2ab9e6f9fa135861ef74ad4e7677524fcc
 const Stack = createStackNavigator();
 const AuthenticatedUserContext = createContext({});
 
@@ -31,7 +36,10 @@ function ChatStack() {
       <Stack.Screen name='Chat' component={Chat} />
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='AddNewVeh' component={AddNewVeh} />
+<<<<<<< HEAD
       <Stack.Screen name='EditProfile' component={EditProfile} />
+=======
+>>>>>>> 31b59e2ab9e6f9fa135861ef74ad4e7677524fcc
 
     </Stack.Navigator>
   );
