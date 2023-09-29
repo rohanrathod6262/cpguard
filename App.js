@@ -10,6 +10,7 @@ import Chat from './screens/Chat';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 import AddNewVeh from './screens/AddNewVeh';
+import Notification from './screens/Notification';
 
 const Stack = createStackNavigator();
 const AuthenticatedUserContext = createContext({});
@@ -30,6 +31,7 @@ function ChatStack() {
       <Stack.Screen name='Chat' component={Chat} />
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='AddNewVeh' component={AddNewVeh} />
+      <Stack.Screen name='Notification' component={Notification} />
     </Stack.Navigator>
   );
 }
