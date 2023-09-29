@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, TouchableOpacity, Button, Text, Image, StyleSheet, backgroundColor } from "react-native";
+import { View, TouchableOpacity, Button, Text, Image, StyleSheet, backgroundColor, ImageBackground} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Footer from "./component/Footer";
 import EditProfile from "./EditProfile";
@@ -19,7 +19,10 @@ const Profile = () => {
 
     return (
         <>
-            <View >
+           <View>
+              
+                <ImageBackground source={require('../assets/backImage.jpeg')} resizeMode="cover" style={styles.image1}>
+                
             <TouchableOpacity style={styles.buttonContainer}>
                         <Button  onPress={() => navigation.navigate("EditProfile")} style={{
                         paddingVertical: 10,
@@ -33,6 +36,8 @@ const Profile = () => {
                 <View style={styles.container}>
                     <Image source={require('../assets/profile.webp')} style={styles.image} />
                 </View>
+                </ImageBackground>
+
                 <View style={styles.form}>
                 <Text
                     style={{
@@ -56,7 +61,11 @@ const Profile = () => {
                     </View>
                 </View>
                 </View>
-            </View>
+                </View>
+               
+
+                
+
 
             <Footer />
         </>
@@ -84,18 +93,24 @@ const styles = StyleSheet.create({
     },
     form: {
         width: '80%',
-        marginTop:10,
+        marginTop:80,
         marginLeft:30,
         justifyContent: 'flex-start',
       },
 
+      image1: {
+        width: 400,
+        height: 168,
+        
 
+    },
     image: {
         width: 100,
         height: 100,
+        
         borderRadius: 40,
         marginBottom: 10,
-        marginTop: 10,
+        marginTop: 30,
 
     },
     name: {

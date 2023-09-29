@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import React,{ useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import Profile from './Profile';
@@ -26,10 +26,13 @@ const EditProfile = () => {
   
     return (
       <>
+
       <View style={styles.container}>
+      <ImageBackground source={require('../assets/backImage.jpeg')} resizeMode="cover" style={styles.image1}>
         <View style={styles.avatarContainer}>
+
           <Image
-            style={styles.avatar}
+            style={styles.image}
             source={require('../assets/profile.webp')}/>
 
                   
@@ -43,6 +46,7 @@ const EditProfile = () => {
           */}
           
         </View>
+       </ImageBackground>
         
         <View style={styles.form}>
         <Text
@@ -50,6 +54,7 @@ const EditProfile = () => {
                         borderColor: "black",
                         borderWidth: 0.6,
                         height: 1,
+
 
                     }} />
 
@@ -82,7 +87,7 @@ const EditProfile = () => {
             onChangeText={setBio}
           />
           <TouchableOpacity style={styles.button} onPress={() => handleSubmit({name, email, bio, avatar})}>
-            <Text style={styles.buttonText}>Submit</Text>
+            <Text style={styles.buttonText}>Update</Text>
           </TouchableOpacity>
         </View>
   
@@ -101,9 +106,20 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       
     },
+    image: {
+      width: 100,
+      height: 100,
+      borderRadius: 50,
+      marginTop: 30,
+      
+    },
+    image1: {
+      width: 400,
+      height: 105,
+  },
     form: {
       width: '80%',
-      marginTop:10,
+      marginTop:70,
     },
     label: {
       marginTop: 20,
@@ -123,21 +139,20 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       paddingVertical: 10,
       paddingHorizontal: 20,
+       // sets the primary axis to horizontal
+      justifyContent: 'center',
     },
     buttonText: {
       color: '#fff',
       fontSize: 18,
+      textAlign:'center',
+      fontWeight: "bold",
     },
     avatarContainer: {
       marginTop: 20,
       alignItems: 'center',
     },
-    avatar: {
-      width: 100,
-      height: 100,
-      borderRadius: 50,
-      
-    },
+   
     changeAvatarButton: {
       marginTop: 10,
     },
