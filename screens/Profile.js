@@ -74,7 +74,7 @@ const Profile = () => {
 
 
                 </View> 
-            </View>s
+            </View>
 
 
 
