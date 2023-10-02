@@ -4,13 +4,14 @@ import { View, Text, StyleSheet, Alert, Image } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { TextInput, Button } from 'react-native-paper';
 import Footer from './component/Footer';
+import { Picker } from '@react-native-picker/picker';
 
 const AddNewVeh = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
-
+  const [selectedValue, setSelectedValue] = useState('Bike');
 
 
   return (
@@ -49,11 +50,17 @@ const AddNewVeh = () => {
           label="Model Number"
         />
 
-        <TextInput
-          style={styles.input}
-          label="Type : Bike/car"
-
-        />
+<View style={styles.pickerContainer}>
+        <Picker
+          style={styles.picker}
+          selectedValue={selectedValue}
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+        >
+          <Picker.Item label="Bike" value="Bike" />
+          <Picker.Item label="Car" value="Car" />
+          <Picker.Item label="Other" value="Other" />
+        </Picker>
+      </View>
 
         {/* <TextInput
           style={styles.input}
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    padding: 10
+    padding: 0
 
 },
 
@@ -113,7 +120,20 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 12,
-  }
+  },
+  pickerContainer: {
+    borderWidth: 2, // Add a border
+    borderColor: 'gray',
+    borderRadius: 4, // Border radius
+    overflow: 'hidden', // Hide overflow content
+  },
+  picker: {
+    height: 50, // Adjust the height as needed
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 8,
+  },
 });
 
 
