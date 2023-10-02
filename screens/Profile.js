@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import { View, TouchableOpacity, Button, Text, Image, StyleSheet, backgroundColor, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Footer from "./component/Footer";
@@ -9,17 +9,17 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Profile = () => {
     const navigation = useNavigation();
 
-    //  const [checked, setChecked] = useState(false);
+     const [checked, setChecked] = useState(false);
 
-    //  const toggleSwitch = () => {
-    //    setChecked(!checked);
-    //  };
+     const toggleSwitch = () => {
+       setChecked(!checked);
+     };
 
 
-    // const handleNoPress = () => {
-    //     console.log('No button pressed!');
-    //     // Handle your logic for "No" here
-    // };
+    const handleNoPress = () => {
+        console.log('No button pressed!');
+        // Handle your logic for "No" here
+    };
 
     return (
         <>
@@ -62,8 +62,8 @@ const Profile = () => {
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={styles.privacyy}>Privacy:</Text>
                             <Switch style={{marginLeft: 10, marginTop:7}}
-                                // value={checked}
-                                // onValueChange={(value) => setChecked(value)}
+                                value={checked}
+                                onValueChange={(value) => setChecked(value)}
                             />
 
 
