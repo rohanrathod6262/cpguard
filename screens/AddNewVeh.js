@@ -61,11 +61,10 @@ const AddNewVeh = () => {
 
         /> */}
 
-
-        <Button style={{ marginTop: 10,fontSize: 20 }} mode="contained" >
-          save
+        <Button style={{ marginLeft:65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
+      justifyContent:'center',width: 200,height: 50, alignItems: "center",}} mode="contained" >
+                            <Text style={styles.buttonText}>Save</Text>
         </Button>
-
 
       </View>
 
@@ -84,14 +83,23 @@ const styles = StyleSheet.create({
     alignSelf: 'center', // This centers the image horizontally
     marginBottom: 14, // space below the image
     borderRadius: 70,
+    
 
   },
+
+  buttonText: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    padding: 10
+
+},
 
   container: {
     flex: 1,
     padding: 16,
 
-
+    backgroundColor: '#FFE8F3'
   },
   title: {
     fontSize: 20,
