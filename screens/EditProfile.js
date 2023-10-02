@@ -3,11 +3,11 @@ import React,{ useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import Profile from './Profile';
 import Footer from './component/Footer';
+import { MaterialIcons } from "@expo/vector-icons";
+
 
 const EditProfile = () => {
     const navigation = useNavigation();
-
-   
     
     const profile = {
       name: 'Jane Doe',
@@ -31,21 +31,39 @@ const EditProfile = () => {
       <ImageBackground source={require('../assets/backImage.jpeg')} resizeMode="cover" style={styles.image1}>
         <View style={styles.avatarContainer}>
 
-          <Image
-            style={styles.image}
-            source={require('../assets/profile.webp')}/>
+          
 
-                  
-          
-          {/* Open Image picker
-          
-          <TouchableOpacity style={styles.changeAvatarButton} onPress={() => {}}>
-            <Text style={styles.changeAvatarButtonText}>Change Avatar</Text>
-          </TouchableOpacity> 
-          
-          */}
-          
+            <TouchableOpacity >
+            <Image
+                source={require('../assets/profile.webp')}              
+                style={{
+                height: 100,
+                width: 100,
+                borderRadius: 85,
+                marginTop: 30,
+              }}
+            />
+
+            <View
+              style={{
+                position: "absolute",
+                bottom: 0,
+                right: 10,
+                zIndex: 9999,
+              }}
+            >
+              <MaterialIcons
+                name="photo-camera"
+                size={32}
+                color={'black'}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
+          
+          
+          
+        
        </ImageBackground>
         
         <View style={styles.form}>
@@ -104,7 +122,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      
+      backgroundColor: '#FFE8F3',      
     },
     image: {
       width: 100,
@@ -132,6 +150,7 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       padding: 10,
       fontSize: 18,
+      backgroundColor: 'white', 
     },
     button: {
       marginTop: 20,
@@ -156,6 +175,7 @@ const styles = StyleSheet.create({
       fontSize: 18,
       textAlign:'center',
       fontWeight: "bold",
+      
     },
     avatarContainer: {
       marginTop: 20,
