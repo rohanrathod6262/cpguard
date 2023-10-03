@@ -69,3 +69,4 @@ Expo will show you what dependencies need to be updated. Install the dependencie
 ```
 yarn start --reset-cache
 ```
+npm install @rneui/base @rneui/themed
