@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import Constants from "expo-constants";
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyA1w6oV9cEok-GljuQZf3ATCH7x4dP87Po",
-  authDomain: "chatapp-a09bc.firebaseapp.com",
-  projectId: "chatapp-a09bc",
-  storageBucket: "chatapp-a09bc.appspot.com",
-  messagingSenderId: "13954429",
-  appId: "1:13954429:web:1561bd5d1b926c5470f014",
-  measurementId: "G-4Z9CNQSX2E"
+  apiKey: "AIzaSyAlkSQ2_olmgnedjOv2XIh0y9s2YdV9rk8",
+  authDomain: "cpguide-64632.firebaseapp.com",
+  projectId: "cpguide-64632",
+  storageBucket: "cpguide-64632.appspot.com",
+  messagingSenderId: "230401273260",
+  appId: "1:230401273260:web:c007483f589b360e1e1e09",
+  measurementId: "G-BWN1Y99X4W"
   //   @deprecated is deprecated Constants.manifest
 };
 // initialize firebase
