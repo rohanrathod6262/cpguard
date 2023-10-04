@@ -7,11 +7,14 @@ import { auth } from './config/firebase';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Chat from './screens/Chat';
+import showCar from './screens/CarDetails';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 import AddNewVeh from './screens/AddNewVeh';
 import EditProfile from './screens/EditProfile';
 import Notification from './screens/Notification';
+import editCar from './screens/editCar';
+// import editCar from './screens/QRcode';
 
 
 const Stack = createStackNavigator();
@@ -35,6 +38,9 @@ function ChatStack() {
       <Stack.Screen name='AddNewVeh' component={AddNewVeh} />
       <Stack.Screen name='EditProfile' component={EditProfile} />
       <Stack.Screen name='Notification' component={Notification} />
+      <Stack.Screen name='CarDetails' component={showCar} />
+      <Stack.Screen name='editCar' component={editCar} />
+      {/* <Stack.Screen name='CarDetails' component={QRcode} /> */}
 
 
     </Stack.Navigator>
