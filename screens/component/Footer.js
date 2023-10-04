@@ -33,13 +33,7 @@ const Footer = () => {
         <Text style={styles.iconText}>Notifications</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Profile")}
-        style={styles.iconContainer}
-      >
-        <Entypo name="user" size={24} color={colors.primary} />
-        <Text style={styles.iconText}>Profile</Text>
-      </TouchableOpacity>
+     
     </View>
   );
 };
