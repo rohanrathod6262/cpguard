@@ -16,68 +16,66 @@ const AddNewVeh = () => {
 
   return (
     <>
-    
-    <View style={styles.container}>
-
-      <Image
-        source={require('../assets/carbike.png')}
-        style={styles.image}
-      />
-
-
-
 
       <View style={styles.container}>
 
-
-        <Text
-          style={{
-            borderColor: "black",
-            borderWidth: 0.6,
-            height: 1,
-
-
-          }} />
-        <Text style={styles.title}>Add Details</Text>
-        <TextInput
-          style={styles.input}
-          label="Vehicle Name"
-
+        <Image
+          source={require('../assets/carbike.png')}
+          style={styles.image}
         />
 
-        <TextInput
-          style={styles.input}
-          label="Model Number"
-        />
 
-<View style={styles.pickerContainer}>
-        <Picker
-          style={styles.picker}
-          selectedValue={selectedValue}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-        >
-          <Picker.Item label="Bike" value="Bike" />
-          <Picker.Item label="Car" value="Car" />
-          <Picker.Item label="Other" value="Other" />
-        </Picker>
-      </View>
 
-        {/* <TextInput
+
+        <View style={styles.container}>
+
+
+          <Text
+            style={{
+              borderColor: "black",
+              borderWidth: 0.6,
+              height: 1,
+
+
+            }} />
+          <Text style={styles.title}>Add Details</Text>
+          <TextInput
+            style={styles.input}
+            label="Vehicle Name"
+
+          />
+
+          <TextInput
+            style={styles.input}
+            label="Model Number"
+          />
+
+          <View style={styles.pickerContainer}>
+            <Picker
+              style={styles.picker}
+            >
+              <Picker.Item label="Bike" value="Bike" />
+            </Picker>
+          </View>
+
+          {/* <TextInput
           style={styles.input}
           label="Password"
 
         /> */}
 
-        <Button style={{ marginLeft:65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
-      justifyContent:'center',width: 200,height: 50, alignItems: "center",}} mode="contained" >
-                            <Text style={styles.buttonText}>Save</Text>
-        </Button>
+          <Button style={{
+            marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
+            justifyContent: 'center', width: 200, height: 50, alignItems: "center",
+          }} mode="contained" >
+            <Text style={styles.buttonText}>Save</Text>
+          </Button>
+
+        </View>
 
       </View>
-
-    </View>
-     <Footer/>
-     </>
+      <Footer />
+    </>
   );
 };
 
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center', // This centers the image horizontally
     marginBottom: 14, // space below the image
     borderRadius: 70,
-    
+
 
   },
 
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: 0
 
-},
+  },
 
   container: {
     flex: 1,
