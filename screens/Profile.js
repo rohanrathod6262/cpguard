@@ -5,7 +5,8 @@ import Footer from "./component/Footer";
 import EditProfile from "./EditProfile";
 import { Switch } from '@rneui/themed';
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { Entypo } from '@expo/vector-icons';
+import colors from "../colors";
 const Profile = () => {
     const navigation = useNavigation();
 
@@ -50,7 +51,13 @@ const Profile = () => {
                         }} />
 
                     <View style={styles.RectangleShapeView}>
-                        <Text style={styles.name}>Name: Rohan </Text>
+
+                        <View style={{ flexDirection: "row"}}>
+
+                        <Entypo name="bell" size={24} color={colors.primary} style={{paddingTop:10}}/>
+                        <Text style={styles.name}> Name: Rohan </Text>
+                        </View>
+
 
                         <Text style={styles.number}>Number: 7887308177</Text>
                         <Text style={styles.email}>Email: rohan6262@gmail.com</Text>
@@ -95,23 +102,6 @@ const styles = StyleSheet.create({
         padding: 20
         
     },
-    form: {
-        width: "100%",
-        marginTop: 80,
-        // justifyContent: 'flex-start',
-    },
-    RectangleShapeView: {
-        marginTop: 10,
-        width: "100%",
-        height: 400,
-        backgroundColor: "white",
-        color: "black",
-        borderRadius: 10,
-        borderColor: "black",
-        borderWidth: 1,
-        elevation: 3
-    },
-
     avatar: {
         width: 130,
         height: 130,
@@ -123,11 +113,60 @@ const styles = StyleSheet.create({
         position: 'absolute',
         marginTop: 50,
     },
+
+    form: {
+        width: "100%",
+        marginTop: 80,
+        // justifyContent: 'flex-start',
+    },
+    RectangleShapeView: {
+        marginTop: 10,
+        width: "100%",
+        // height: 400,
+        // backgroundColor: "white",
+        // color: "black",
+        // borderRadius: 10,
+        // borderColor: "black",
+        // borderWidth: 1,
+        paddingLeft: 40,
+        // elevation: 3
+    },
+
+    
     buttonContainer: {
         flexDirection: 'row',     // sets the primary axis to horizontal
         justifyContent: 'flex-end',  // aligns children to the end (right) on the primary axis
         padding: 16,//
         borderRadius: 20,
+    },
+
+    name: {
+        paddingLeft: 4,
+        
+        fontSize: 20,
+        marginBottom: 20,
+        marginTop: 10,
+        fontWeight: 'bold',
+
+    },
+    
+
+    number: {
+        paddingLeft: 4,
+        fontSize: 20,
+        marginBottom: 20,
+        fontWeight: 'bold',
+
+    },
+
+
+    email: {
+        paddingLeft: 4,
+        fontSize: 20,
+        marginBottom: 20,
+        fontWeight: 'bold',
+
+
     },
 
     button: {
@@ -158,41 +197,7 @@ const styles = StyleSheet.create({
     },
 
     
-    name: {
-        paddingLeft: 10,
-        fontSize: 20,
-        marginBottom: 20,
-        marginTop: 10,
-        fontWeight: 'bold',
-
-    },
-    image1: {
-        width: 100,
-        height: 100,
-
-        borderRadius: 40,
-        marginBottom: 10,
-        marginTop: 30,
-
-    },
-
-    number: {
-        paddingLeft: 10,
-        fontSize: 20,
-        marginBottom: 20,
-        fontWeight: 'bold',
-
-    },
-
-
-    email: {
-        paddingLeft: 10,
-        fontSize: 20,
-        marginBottom: 20,
-        fontWeight: 'bold',
-
-
-    },
+  
 
     privacyy: {
         paddingLeft: 10,
