@@ -78,7 +78,7 @@ const Home = () => {
               <View style={styles.carPhoto}>
                 <Image
                   style={styles.backgroundImage}
-                  source={{ uri: "https://i.pinimg.com/originals/93/c1/05/93c105244c0a3de81267a89cb13386f7.png" }}
+                  source={require('../assets/Car.png')}
                 />
               </View>
             </View>
