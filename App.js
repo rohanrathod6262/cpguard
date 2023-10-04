@@ -11,6 +11,7 @@ import Home from './screens/Home';
 import Profile from './screens/Profile';
 import AddNewVeh from './screens/AddNewVeh';
 import EditProfile from './screens/EditProfile';
+import Notification from './screens/Notification';
 
 
 const Stack = createStackNavigator();
@@ -33,6 +34,7 @@ function ChatStack() {
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='AddNewVeh' component={AddNewVeh} />
       <Stack.Screen name='EditProfile' component={EditProfile} />
+      <Stack.Screen name='Notification' component={Notification} />
 
 
     </Stack.Navigator>
