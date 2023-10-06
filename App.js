@@ -14,7 +14,7 @@ import AddNewVeh from './screens/AddNewVeh';
 import EditProfile from './screens/EditProfile';
 import Notification from './screens/Notification';
 import editCar from './screens/editCar';
-// import editCar from './screens/QRcode';
+import QRcode from './screens/QRcode';
 
 
 const Stack = createStackNavigator();
@@ -40,7 +40,7 @@ function ChatStack() {
       <Stack.Screen name='Notification' component={Notification} />
       <Stack.Screen name='CarDetails' component={showCar} />
       <Stack.Screen name='editCar' component={editCar} />
-      {/* <Stack.Screen name='CarDetails' component={QRcode} /> */}
+      <Stack.Screen name='QRcode' component={QRcode} />
 
 
     </Stack.Navigator>

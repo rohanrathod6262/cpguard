@@ -10,9 +10,9 @@ const editCar = () => {
 
     const route = useRoute();
 
-    const [carname, setCarname] = route.params.carname;
-    const [carno, setCarno] = route.params.carno;
-    const [type, setType] = route.params.type;
+    const {carname} = route.params;
+    const {carno}= route.params;
+    const {type} = route.params;
 
 
     return (
@@ -31,39 +31,40 @@ const editCar = () => {
                         }} />
                     <Text style={styles.title}>Edit CarDetails
                     </Text>
-                                            <TextInput
-                            style={styles.input}
-                            label="Vehicle Name"
-                            autoCapitalize="none"
-                            textContentType="text"
-                            value={carname}
-                            onChangeText={(text) => setCarname(text)}
-                        />
-                        <TextInput
-                            style={styles.input}
-                            label="Model Number"
-                            textContentType="text"
-                            value={type}
-                            onChangeText={(text) => setCarno(text)}
-                        />
-                        <View style={styles.pickerContainer}>
-                            <Picker
-                                style={styles.picker}
-                                selectedValue={type}
-                                onValueChange={(itemValue, itemIndex) => setType(itemValue)}
-                            >
-                                <Picker.Item label="Bike" value="Bike" />
-                                <Picker.Item label="Car" value="Car" />
-                                <Picker.Item label="Other" value="Other" />
-                                                            </Picker>
-                        </View>
-                                            <Button style={{
-                            marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
-                            justifyContent: 'center', width: 200, height: 50, alignItems: "center",
-                        }} mode="contained" >
-                            <Text style={styles.buttonText}>Edit</Text>
-                        </Button>
-                    
+                    <TextInput
+                        style={styles.input}
+                        label="Vehicle Name"
+                        autoCapitalize="none"
+                        textContentType="text"
+                        value={carname}
+                        onChangeText={(text) => setCarname(text)}
+                    />
+                    <TextInput
+                        style={styles.input}
+                        label="Model Number"
+                        textContentType="text"
+                        value={carno}
+                        onChangeText={(text) => setCarno(text)}
+                    />
+                    <View style={styles.pickerContainer}>
+                        <Picker
+                            style={styles.picker}
+                            selectedValue={type}
+                            onValueChange={(itemValue, itemIndex) => setType(itemValue)}
+                        >
+                            <Picker.Item label="Bike" value="Bike" />
+                            <Picker.Item label="Car" value="Car" />
+                            <Picker.Item label="Other" value="Other" />
+                        </Picker>
+                    </View>
+                    <Button style={{
+                        marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
+                        justifyContent: 'center', width: 200, height: 50, alignItems: "center",
+                    }} mode="contained" >
+                        <Text style={styles.buttonText}>Edit</Text>
+                    </Button>
+
+
                 </View>
 
             </View>
