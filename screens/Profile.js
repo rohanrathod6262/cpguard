@@ -24,20 +24,20 @@ const Profile = () => {
 
     return (
         <>
-            <View style={{ flex: 1, backgroundColor: '#bfceec' }}>
-{/* 00BFFF */}
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                {/* 00BFFF */}
                 <View style={styles.header}>
                     <View style={{ flexDirection: 'row', marginTop: 20, marginRight: 10, justifyContent: 'flex-end', }}>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("EditProfile")}>
                             <Text style={styles.buttonText}>Edit Profile</Text>
                         </TouchableOpacity>
                     </View>
-               
 
 
-                <View style={styles.container}>
-                    <Image source={require('../assets/profile.webp')} style={styles.avatar} />
-                </View>
+
+                    <View style={styles.container}>
+                        <Image source={require('../assets/profile.webp')} style={styles.avatar} />
+                    </View>
                 </View>
 
 
@@ -50,29 +50,53 @@ const Profile = () => {
 
                         }} />
 
-                    <View style={styles.RectangleShapeView}>
+                    <View style={styles.DetailsView}>
 
-                        <View style={{ flexDirection: "row"}}>
+                    <Text style={styles.text0}>User Details</Text>
 
-                        <Entypo name="bell" size={24} color={colors.primary} style={{paddingTop:10}}/>
-                        <Text style={styles.name}> Name: Rohan </Text>
+                        <View style={styles.boxview}>
+                            <Entypo name="user" size={30} color={colors.primary} style={{ paddingTop: 10, paddingRight: 5 }} />
+
+                            <View style={{ flexDirection: 'column' }}>
+                                <Text style={styles.name}> Name </Text>
+                                <Text style={styles.name1}> Rohan Rathod</Text>
+                            </View>
                         </View>
 
 
-                        <Text style={styles.number}>Number: 7887308177</Text>
-                        <Text style={styles.email}>Email: rohan6262@gmail.com</Text>
+                        <View style={styles.boxview}>
+                        <Entypo name="mobile" size={30} color={colors.primary} style={{ paddingTop: 10 }} />
+
+                            <View style={{ flexDirection: 'column' }}>
+                                <Text style={styles.name}> Number </Text>
+                                <Text style={styles.name1}> 7887308177</Text>
+                            </View>
+                        </View>
 
 
-                        <View style={{ flexDirection: 'row' }}>
-                            <Text style={styles.privacyy}>Privacy:</Text>
-                            <Switch style={{ marginLeft: 10, marginTop: 7 }}
+                        <View style={styles.boxview}>
+                        <Entypo name="mail" size={30} color={colors.primary} style={{ paddingTop: 10 }} />
+
+                            <View style={{ flexDirection: 'column' }}>
+                                <Text style={styles.name}> Email </Text>
+                                <Text style={styles.name1}> rohan6262@gmail.com</Text>
+                            </View>
+                        </View>
+
+                        <View style={styles.boxview}>
+                        <Entypo name="lock" size={24} color={colors.primary} style={{ paddingTop: 10 }} />
+
+                        <Text style={styles.privacyy}>Privacy:</Text>
+                            <Switch style={{ marginLeft: 10, marginTop: 15 }}
                                 value={checked}
                                 onValueChange={(value) => setChecked(value)}
                             />
 
-
-
                         </View>
+                        
+                       
+
+                        
 
                     </View>
 
@@ -94,13 +118,16 @@ export default Profile
 const styles = StyleSheet.create({
 
     header: {
-        backgroundColor: '#1f386b',
+        backgroundColor: '#f57c00',
         height: 200,
+        borderBottomLeftRadius:160,
+        borderBottomRightRadius:160,
+
     },
     container: {
         flex: 1,
         padding: 20
-        
+
     },
     avatar: {
         width: 130,
@@ -119,20 +146,31 @@ const styles = StyleSheet.create({
         marginTop: 80,
         // justifyContent: 'flex-start',
     },
-    RectangleShapeView: {
+    DetailsView: {
         marginTop: 10,
-        width: "100%",
+
         // height: 400,
         // backgroundColor: "white",
         // color: "black",
         // borderRadius: 10,
         // borderColor: "black",
         // borderWidth: 1,
-        paddingLeft: 40,
+        paddingLeft: 10,
+        paddingRight: 10,
         // elevation: 3
     },
+    text0:{
+        paddingLeft: 4,
+        fontSize: 25,
+        marginBottom: 3,
+        marginTop: 3,
+        font:'Times New Roman',
+        fontWeight: 'bold',
+        textAlign:'center',
 
-    
+    },
+
+
     buttonContainer: {
         flexDirection: 'row',     // sets the primary axis to horizontal
         justifyContent: 'flex-end',  // aligns children to the end (right) on the primary axis
@@ -140,30 +178,57 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
 
+    boxview:{
+        flexDirection: "row", backgroundColor: "white",
+        color: "black",
+        borderRadius: 10,
+        borderWidth: 1,
+        marginTop:15,
+        paddingLeft:10
+    },
     name: {
         paddingLeft: 4,
-        
+
+        fontSize: 15,
+        marginBottom: 3,
+        marginTop: 2,
+        fontWeight: 'bold',
+
+    },
+    // name: {
+    //     paddingLeft: 4,
+
+    //     fontSize: 10,
+    //     marginBottom: 7,
+    //     marginTop:7,
+    //     fontWeight: 'bold',
+
+    // },
+    name1: {
+        paddingLeft: 4,
+
+        fontSize: 20,
+        marginBottom: 4,
+        marginTop: 1,
+        fontWeight: 'bold',
+
+    },
+
+    number: {
+        paddingLeft: 4,
         fontSize: 20,
         marginBottom: 20,
         marginTop: 10,
         fontWeight: 'bold',
 
     },
-    
-
-    number: {
-        paddingLeft: 4,
-        fontSize: 20,
-        marginBottom: 20,
-        fontWeight: 'bold',
-
-    },
 
 
     email: {
-        paddingLeft: 4,
+        paddingLeft: 6,
         fontSize: 20,
         marginBottom: 20,
+        marginTop: 10,
         fontWeight: 'bold',
 
 
@@ -189,18 +254,20 @@ const styles = StyleSheet.create({
         padding: 10
 
     },
-    
+
 
     image: {
         width: 400,
         height: 168,
     },
 
-    
-  
+
+
 
     privacyy: {
-        paddingLeft: 10,
+        marginTop: 10,
+
+        paddingLeft: 4,
         fontSize: 20,
         fontWeight: 'bold',
 
