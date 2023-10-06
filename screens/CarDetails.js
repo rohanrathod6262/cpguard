@@ -13,12 +13,18 @@ const CarDetails = () => {
   const navigation = useNavigation();
 
   const editcar = () => {
-    navigation.navigate("editCar", { carname: "BMW", carno: "MH20EJ2027", type: "Bike" });
+    navigation.navigate("editCar", { carname: "BMW", carno: "MH20EJ2027", type: "Car" });
     // navigation.navigate("editCar", { carname: carname, carno: carno, type: type });
 
 
   };
+  
+  const GenerateQR = () => {
+    navigation.navigate("QRcode", { carname: "BMW", carno: "MH20EJ2027", type: "Car" });
+    // navigation.navigate("editCar", { carname: carname, carno: carno, type: type });
 
+
+  };
 
 
   return (
@@ -65,7 +71,7 @@ const CarDetails = () => {
             <Button style={{
               marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
               justifyContent: 'center', width: 250, height: 50, alignItems: "center",
-            }} mode="contained" >
+            }} mode="contained" onPress={GenerateQR}>
               <Text style={styles.buttonText}>Generate QR Code</Text>
             </Button>
           </View>

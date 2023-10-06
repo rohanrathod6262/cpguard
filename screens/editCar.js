@@ -10,9 +10,9 @@ const editCar = () => {
 
     const route = useRoute();
 
-    const [carname, setCarname] = route.params.carname;
-    const [carno, setCarno] = route.params.carno;
-    const [type, setType] = route.params.type;
+    const {carname} = route.params;
+    const {carno}= route.params;
+    const {type} = route.params;
 
 
     return (
@@ -43,7 +43,7 @@ const editCar = () => {
                         style={styles.input}
                         label="Model Number"
                         textContentType="text"
-                        value={type}
+                        value={carno}
                         onChangeText={(text) => setCarno(text)}
                     />
                     <View style={styles.pickerContainer}>
