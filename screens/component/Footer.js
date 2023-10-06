@@ -45,10 +45,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "#FFF5EE",
+    backgroundColor: "#f57c00",
     borderTopWidth: 1,
     borderColor: "#E0E0E0",
-    paddingVertical: 10,
+    paddingVertical: 12,
   },
   iconContainer: {
     alignItems: "center",

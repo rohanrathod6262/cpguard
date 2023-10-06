@@ -18,10 +18,10 @@ const editCar = () => {
     return (
         <>
             <View style={styles.container}>
-                <Image
-                    source={require('../assets/carbike.png')}
-                    style={styles.image}
-                />
+                                    <Image
+                        source={require('../assets/carbike.png')}
+                        style={styles.image}
+                    />
                 <View style={styles.container}>
                     <Text
                         style={{
@@ -31,39 +31,39 @@ const editCar = () => {
                         }} />
                     <Text style={styles.title}>Edit CarDetails
                     </Text>
-                    <TextInput
-                        style={styles.input}
-                        label="Vehicle Name"
-                        autoCapitalize="none"
-                        textContentType="text"
-                        value={carname}
-                        onChangeText={(text) => setCarname(text)}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        label="Model Number"
-                        textContentType="text"
-                        value={type}
-                        onChangeText={(text) => setCarno(text)}
-                    />
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            style={styles.picker}
-                            selectedValue={type}
-                            onValueChange={(itemValue, itemIndex) => setType(itemValue)}
-                        >
-                            <Picker.Item label="Bike" value="Bike" />
-                            <Picker.Item label="Car" value="Car" />
-                            <Picker.Item label="Other" value="Other" />
-                        </Picker>
-                    </View>
-                    <Button style={{
-                        marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
-                        justifyContent: 'center', width: 200, height: 50, alignItems: "center",
-                    }} mode="contained" >
-                        <Text style={styles.buttonText}>Edit</Text>
-                    </Button>
-
+                                            <TextInput
+                            style={styles.input}
+                            label="Vehicle Name"
+                            autoCapitalize="none"
+                            textContentType="text"
+                            value={carname}
+                            onChangeText={(text) => setCarname(text)}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            label="Model Number"
+                            textContentType="text"
+                            value={type}
+                            onChangeText={(text) => setCarno(text)}
+                        />
+                        <View style={styles.pickerContainer}>
+                            <Picker
+                                style={styles.picker}
+                                selectedValue={type}
+                                onValueChange={(itemValue, itemIndex) => setType(itemValue)}
+                            >
+                                <Picker.Item label="Bike" value="Bike" />
+                                <Picker.Item label="Car" value="Car" />
+                                <Picker.Item label="Other" value="Other" />
+                                                            </Picker>
+                        </View>
+                                            <Button style={{
+                            marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
+                            justifyContent: 'center', width: 200, height: 50, alignItems: "center",
+                        }} mode="contained" >
+                            <Text style={styles.buttonText}>Edit</Text>
+                        </Button>
+                    
                 </View>
 
             </View>
@@ -75,7 +75,7 @@ const editCar = () => {
 export default editCar
 
 const styles = StyleSheet.create({
-    image: {
+        image: {
         width: 150, // or the width of your choice
         height: 150, // or the height of your choice
         alignSelf: 'center', // This centers the image horizontally
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         marginBottom: 12,
-    },
+            },
     pickerContainer: {
         borderWidth: 2, // Add a border
         borderColor: 'gray',
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         height: 50, // Adjust the height as needed
-    },
+            },
     label: {
         fontSize: 16,
         marginBottom: 8,
