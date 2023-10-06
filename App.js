@@ -35,7 +35,7 @@ function ChatStack() {
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Chat' component={Chat} />
       <Stack.Screen name='Profile' component={Profile} />
-      <Stack.Screen name='AddNewVeh' component={AddNewVeh} />
+      <Stack.Screen name='AddNewVeh' component={AddNewVeh}/>
       <Stack.Screen name='EditProfile' component={EditProfile} />
       <Stack.Screen name='Notification' component={Notification} />
       <Stack.Screen name='CarDetails' component={showCar} />

@@ -18,10 +18,10 @@ const editCar = () => {
     return (
         <>
             <View style={styles.container}>
-                <Image
-                    source={require('../assets/carbike.png')}
-                    style={styles.image}
-                />
+                                    <Image
+                        source={require('../assets/carbike.png')}
+                        style={styles.image}
+                    />
                 <View style={styles.container}>
                     <Text
                         style={{
@@ -64,6 +64,7 @@ const editCar = () => {
                         <Text style={styles.buttonText}>Edit</Text>
                     </Button>
 
+
                 </View>
 
             </View>
@@ -75,7 +76,7 @@ const editCar = () => {
 export default editCar
 
 const styles = StyleSheet.create({
-    image: {
+        image: {
         width: 150, // or the width of your choice
         height: 150, // or the height of your choice
         alignSelf: 'center', // This centers the image horizontally
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         marginBottom: 12,
-    },
+            },
     pickerContainer: {
         borderWidth: 2, // Add a border
         borderColor: 'gray',
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         height: 50, // Adjust the height as needed
-    },
+            },
     label: {
         fontSize: 16,
         marginBottom: 8,

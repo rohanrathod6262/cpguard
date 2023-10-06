@@ -34,7 +34,7 @@ const Home = () => {
       // headerLeft: () => (v
       //   <FontAwesome name="search" size={24} color={colors.gray} style={{ marginLeft: 15 }} />
       // ),
-      headerStyle: { backgroundColor: '#bfceec'},      
+      headerStyle: { backgroundColor: '#f57c00'},      
       
       headerRight: () => (
         <TouchableOpacity
@@ -191,13 +191,14 @@ const Home = () => {
 
         </ScrollView>
         {/* FAB */}
+        <View style={{flexDirection:'row',justifyContent:'flex-end'}}>
         <TouchableOpacity
           style={styles.plusfab}
           onPress={() => navigation.navigate("AddNewVeh")}
         >
-          <Entypo name="plus" size={35} color={'red'} />
+          <Entypo name="plus" size={35} color={'white'} />
         </TouchableOpacity>
-
+        </View>
       </View>
 
       <Footer />
@@ -211,7 +212,7 @@ export default Home;
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#1f386b',
+    backgroundColor: 'white',
   },
   // container: {
   //   alignItems: 'flex-start',
@@ -225,7 +226,7 @@ const styles = StyleSheet.create({
   // },
   fabContainer: {
 
-    height: windowHeight * 6.9 / 10,
+    height: windowHeight * 6.5 / 10,
 
     margin: 5,
 
@@ -281,7 +282,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 10,
     fontWeight: 'bold',
-    color: 'white'
+    color: 'black'
   },
   footerText: {
     fontSize: 18,
@@ -321,13 +322,15 @@ const styles = StyleSheet.create({
 
   },
   plusfab: {
-    backgroundColor: 'white',
+    backgroundColor: '#f57c00',
     height: 50,
     width: 50,
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: 'white',
+    
+    
     shadowOffset: {
       width: 0,
       height: 2,
@@ -336,7 +339,7 @@ const styles = StyleSheet.create({
         
         
         right: 30,
-        bottom: 30,
+        // bottom: 30,
       
     },
 
