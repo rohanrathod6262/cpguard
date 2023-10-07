@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Alert, Image } from 'react-native';
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -10,61 +9,73 @@ const editCar = () => {
 
     const route = useRoute();
 
-    const {carname} = route.params;
-    const {carno}= route.params;
-    const {type} = route.params;
+    const { carname } = route.params;
+    const { carno } = route.params;
+    const { type } = route.params;
+
 
 
     return (
         <>
             <View style={styles.container}>
-                                    <Image
-                        source={require('../assets/carbike.png')}
+                <View style={styles.header}>
+
+                    <Image
+                        source={require('../assets/blackcar.jpg')}
                         style={styles.image}
                     />
-                <View style={styles.container}>
+                </View>
+
+                <View style={{ marginTop: 90 }} >
                     <Text
                         style={{
                             borderColor: "black",
                             borderWidth: 0.6,
                             height: 1,
                         }} />
-                    <Text style={styles.title}>Edit CarDetails
-                    </Text>
-                    <TextInput
-                        style={styles.input}
-                        label="Vehicle Name"
-                        autoCapitalize="none"
-                        textContentType="text"
-                        value={carname}
-                        onChangeText={(text) => setCarname(text)}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        label="Model Number"
-                        textContentType="text"
-                        value={carno}
-                        onChangeText={(text) => setCarno(text)}
-                    />
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            style={styles.picker}
-                            selectedValue={type}
-                            onValueChange={(itemValue, itemIndex) => setType(itemValue)}
-                        >
-                            <Picker.Item label="Bike" value="Bike" />
-                            <Picker.Item label="Car" value="Car" />
-                            <Picker.Item label="Other" value="Other" />
-                        </Picker>
+                    <Text style={styles.title}>Edit CarDetails</Text>
+                    <View style={{ margin: 10 }}>
+
+                        <TextInput
+                            style={styles.input}
+                            label="Vehicle Name"
+                            autoCapitalize="none"
+                            textContentType="text"
+                            value={carname}
+                            onChangeText={(text) => setCarname(text)}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            label="Model Number"
+                            textContentType="text"
+                            value={carno}
+                            onChangeText={(text) => setCarno(text)}
+                        />
+
+
+                        <View style={styles.pickerContainer}>
+                            <Picker
+                                style={styles.picker}
+                                selectedValue={type}
+                                onValueChange={(itemValue, itemIndex) => setType(itemValue)}
+                            >
+                                <Picker.Item label="Bike" value="Bike" />
+                                <Picker.Item label="Car" value="Car" />
+                                <Picker.Item label="Other" value="Other" />
+
+                            </Picker>
+                        </View>
                     </View>
-                    <Button style={{
-                        marginLeft: 65, marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
-                        justifyContent: 'center', width: 200, height: 50, alignItems: "center",
-                    }} mode="contained" >
-                        <Text style={styles.buttonText}>Edit</Text>
-                    </Button>
 
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
 
+                        <Button style={{
+                            marginTop: 35, backgroundColor: '#007FFF', borderRadius: 10,
+                            justifyContent: 'center', width: 200, height: 50, alignItems: "center",
+                        }} mode="contained" >
+                            <Text style={styles.buttonText}>Save</Text>
+                        </Button>
+                    </View>
                 </View>
 
             </View>
@@ -76,12 +87,20 @@ const editCar = () => {
 export default editCar
 
 const styles = StyleSheet.create({
-        image: {
-        width: 150, // or the width of your choice
-        height: 150, // or the height of your choice
+    header: {
+        backgroundColor: '#f57c00',
+        height: 100,
+        borderBottomLeftRadius: 250,
+        borderBottomRightRadius: 250,
+
+    },
+    image: {
+        width: 170, // or the width of your choice
+        height: 163, // or the height of your choice
         alignSelf: 'center', // This centers the image horizontally
         marginBottom: 14, // space below the image
-        borderRadius: 70,
+        borderRadius: 100,
+        marginTop: 14,
 
 
     },
@@ -96,10 +115,9 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        padding: 16,
-
-        backgroundColor: '#FFE8F3'
+        backgroundColor: 'white'
     },
+
     title: {
         fontSize: 20,
         textAlign: 'center',
@@ -112,20 +130,24 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         marginBottom: 12,
-            },
+        backgroundColor: 'white',
+        fontSize: 16
+
+    },
     pickerContainer: {
-        borderWidth: 2, // Add a border
+        borderWidth: 1, // Add a border
         borderColor: 'gray',
         borderRadius: 4, // Border radius
         overflow: 'hidden', // Hide overflow content
     },
     picker: {
-        height: 50, // Adjust the height as needed
-            },
+        height: 50,
+
+        fontSize: 16, // Adjust the height as needed
+        paddingLeft: 8
+    },
     label: {
         fontSize: 16,
         marginBottom: 8,
     },
 });
-
-

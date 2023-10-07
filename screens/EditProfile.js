@@ -138,9 +138,10 @@ const styles = StyleSheet.create({
       marginTop: 20,
       marginBottom:3,
       fontSize: 17,
+      fontWeight:'bold'
     },
     input: {
-      borderColor: '#ccc',
+      borderColor: 'black',
       borderWidth: 1,
       borderRadius: 5,
       padding: 10,

@@ -15,7 +15,7 @@ import EditProfile from './screens/EditProfile';
 import Notification from './screens/Notification';
 import editCar from './screens/editCar';
 import QRcode from './screens/QRcode';
-
+import chatUsers from './screens/chatUsers';
 
 const Stack = createStackNavigator();
 const AuthenticatedUserContext = createContext({});
@@ -41,6 +41,7 @@ function ChatStack() {
       <Stack.Screen name='CarDetails' component={showCar} />
       <Stack.Screen name='editCar' component={editCar} />
       <Stack.Screen name='QRcode' component={QRcode} />
+      <Stack.Screen name='chatUsers' component={chatUsers} />
 
 
     </Stack.Navigator>
