@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../config/firebase';
+import { auth, database } from '../config/firebase';
 const backImage = require("../assets/backImage.jpeg");
+import { addDoc, collection, doc , getDocs , setDoc , deleteDoc,query, where,updateDoc } from "firebase/firestore";
+
 
 export default function Signup({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [phone_no, setPhone] = useState('');
 
 const onHandleSignup = () => {
     if (email !== '' && password !== '') {
+      addDoc(collection(database,"user"),{
+                email: email,
+                password:password,
+                name: name,
+                phone_no:phone_no,
+               });
   createUserWithEmailAndPassword(auth, email, password)
         .then(() => console.log('Signup success'))
-        .catch((err) => Alert.alert("Login error", err.message));
+        .catch();
     }
   };
   
@@ -27,12 +37,12 @@ const onHandleSignup = () => {
         <TextInput
         style={styles.input}
         placeholder="Enter Your Name"
-        // autoCapitalize="none"
-        // autoCorrect={false}
-        // secureTextEntry={true}
-        // textContentType="password"
-        // value={password}
-        // onChangeText={(text) => setPassword(text)}
+        autoCapitalize="none"
+        autoCorrect={false}
+        textContentType="text"
+        autoFocus={true}
+        value={name}
+        onChangeText={(text) => setName(text)}
       />
          <TextInput
         style={styles.input}
@@ -47,13 +57,12 @@ const onHandleSignup = () => {
       
       <TextInput
         style={styles.input}
-        placeholder="Enter Number"
-        //autoCapitalize="none"
-        // autoCorrect={false}
-        // secureTextEntry={true}
-        // textContentType="password"
-        // value={password}
-        // onChangeText={(text) => setPassword(text)}
+        placeholder="Enter Phone Number"
+        autoCapitalize="none"
+        autoCorrect={false}
+        textContentType="phone_no"
+        value={phone_no}
+        onChangeText={(text) => setPhone(text)}
       />
       
 

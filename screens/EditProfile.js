@@ -1,25 +1,19 @@
 import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import React,{ useState } from 'react'
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation,useRoute } from "@react-navigation/native";
 import Profile from './Profile';
 import Footer from './component/Footer';
 import { MaterialIcons } from "@expo/vector-icons";
 
 
 const EditProfile = () => {
+    const route = useRoute();
     const navigation = useNavigation();
+    const { name } = route.params || {};
+    const { phone_no } = route.params || {};
+    const { privacy } = route.params || {};
+    const { email } = route.params || {};
     
-    const profile = {
-      name: 'Jane Doe',
-      email: 'jane.doe@example.com',
-      bio: 'Software engineer and cat lover',
-      avatar: 'https://example.com/jane-doe-avatar.png',
-    }
-    const [name, setName] = useState(profile.name);
-    const [email, setEmail] = useState(profile.email);
-    const [bio, setBio] = useState(profile.bio);
-    const [avatar, setAvatar] = useState(profile.avatar);
-  
     const handleSubmit = () => {
   
     }
@@ -80,22 +74,23 @@ const EditProfile = () => {
           <TextInput
             style={styles.input}
             placeholder="Enter Name"
-            value={name}
-            onChangeText={setName}
+            value={name || ''}
+            // onChangeText={setName}
           />
           <Text style={styles.label}>Email</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter Email"
-            value={email}
-            onChangeText={setEmail}
+            value={email || ''}
+            // onChangeText={setEmail}
           />
-          <Text style={styles.label}>Number</Text>
+          <Text style={styles.label}>{phone_no}</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter Number"
-            // value={bio}
-            // onChangeText={setBio}
+            textContentType="telephoneNumber"
+            value={phone_no || ''}
+            // onChangeText={setPhone}
           />
           <Text style={styles.label}> Privacy on/off</Text>
           <TextInput

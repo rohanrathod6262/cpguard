@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, TouchableOpacity, Button, Text, Image, StyleSheet, backgroundColor, ImageBackground } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation,useRoute } from "@react-navigation/native";
 import Footer from "./component/Footer";
 import EditProfile from "./EditProfile";
 import { Switch } from '@rneui/themed';
@@ -8,18 +8,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from '@expo/vector-icons';
 import colors from "../colors";
 const Profile = () => {
+    const route = useRoute();
     const navigation = useNavigation();
+   const { name } = route.params || {};
+   const { phone_no } = route.params || {};
+   const { privacy } = route.params || {};
+   const { email } = route.params || {};
 
-    const [checked, setChecked] = useState(false);
 
+
+   const [checked, setChecked] = useState(privacy);
     const toggleSwitch = () => {
         setChecked(!checked);
     };
-
-
-    const handleNoPress = () => {
-        console.log('No button pressed!');
-        // Handle your logic for "No" here
+    const EditProfilenavigate = () => {
+        navigation.navigate("EditProfile",{ name , phone_no , email, privacy});
     };
 
     return (
@@ -28,7 +31,7 @@ const Profile = () => {
                 {/* 00BFFF */}
                 <View style={styles.header}>
                     <View style={{ flexDirection: 'row', marginTop: 20, marginRight: 10, justifyContent: 'flex-end', }}>
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("EditProfile")}>
+                        <TouchableOpacity style={styles.button} onPress={EditProfilenavigate}>
                             <Text style={styles.buttonText}>Edit Profile</Text>
                         </TouchableOpacity>
                     </View>
@@ -59,7 +62,7 @@ const Profile = () => {
 
                             <View style={{ flexDirection: 'column' }}>
                                 <Text style={styles.name}> Name </Text>
-                                <Text style={styles.name1}> Rohan Rathod</Text>
+                                <Text style={styles.name1}> {name || ''}</Text>
                             </View>
                         </View>
 
@@ -69,7 +72,7 @@ const Profile = () => {
 
                             <View style={{ flexDirection: 'column' }}>
                                 <Text style={styles.name}> Number </Text>
-                                <Text style={styles.name1}> 7887308177</Text>
+                                <Text style={styles.name1}>  {phone_no || ''}</Text>
                             </View>
                         </View>
 
@@ -79,7 +82,7 @@ const Profile = () => {
 
                             <View style={{ flexDirection: 'column' }}>
                                 <Text style={styles.name}> Email </Text>
-                                <Text style={styles.name1}> rohan6262@gmail.com</Text>
+                                <Text style={styles.name1}>  {email || ''}</Text>
                             </View>
                         </View>
 

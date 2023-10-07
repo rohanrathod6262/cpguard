@@ -20,7 +20,8 @@ const QRcode = () => {
     const { carname } = route.params;
     const { carno } = route.params;
     const { type } = route.params;
-    const data = `Car Name: ${carname}\nCar Number: ${carno}\nType: ${type}`;
+    // const data = `Car Name: ${carname}\nCar Number: ${carno}\nType: ${type}`;
+    const data = "https://documentation.wazuh.com/current/deployment-options/deploying-with-ansible/reference.html";
     const viewShotRef = useRef(null);
 
     const handlePrintQR = async () => {
@@ -39,109 +40,7 @@ const QRcode = () => {
             }
         }
     };
-    // const handlePrintQR = async () => {
-    //     if (viewShotRef.current) {
-    //       try {
-    //         const uri = await viewShotRef.current.capture();
-            
-    //         // Create a new folder (directory) to store the QR code
-    //         const folderName = 'QRCodeFolder';
-    //         const folderInfo = await FileSystem.getInfoAsync(folderName);
-    //         if (!folderInfo.exists) {
-    //           await FileSystem.makeDirectoryAsync(folderName);
-    //         }
     
-    //         // Generate a unique filename for the QR code
-    //         const fileName = `QRCode_${Date.now()}.jpg`;
-    //         const newPath = `${folderName}/${fileName}`;
-    
-    //         // Move the captured image to the new folder with the new name
-    //         await FileSystem.moveAsync({
-    //           from: uri,
-    //           to: newPath,
-    //         });
-    
-    //         // Notify the user that the image has been saved
-    //         alert(`QR code saved as ${fileName} in ${folderName}`);
-    //       } catch (error) {
-    //         console.error('Error saving QR code:', error);
-    //       }
-    //     }
-    //   };
-    // const handlePrintQR = async () => {
-    //     if (viewShotRef.current) {
-    //       try {
-    //         // Request file system permissions
-    //         const { status } = await Permissions.askAsync(Permissions.MEDIA_LIBRARY_WRITE_ONLY);
-    
-    //         if (status === 'granted') {
-    //           const uri = await viewShotRef.current.capture();
-              
-    //           // Create a new folder (directory) to store the QR code
-    //           const folderName = 'QRCodeFolder';
-    //           const folderInfo = await FileSystem.getInfoAsync(folderName);
-    //           if (!folderInfo.exists) {
-    //             await FileSystem.makeDirectoryAsync(folderName);
-    //           }
-    
-    //           // Generate a unique filename for the QR code
-    //           const fileName = `QRCode_${Date.now()}.jpg`;
-    //           const newPath = `${folderName}/${fileName}`;
-    
-    //           // Move the captured image to the new folder with the new name
-    //           await FileSystem.moveAsync({
-    //             from: uri,
-    //             to: newPath,
-    //           });
-    
-    //           // Notify the user that the image has been saved
-    //           alert(`QR code saved as ${fileName} in ${folderName}`);
-    //         } else {
-    //           alert('Permission to access the file system was denied.');
-    //         }
-    //       } catch (error) {
-    //         console.error('Error saving QR code:', error);
-    //       }
-    //     }
-    //   };
-    // const handlePrintQR = async () => {
-    //     if (viewShotRef.current) {
-    //       try {
-    //         const uri = await viewShotRef.current.capture();
-    
-    //         // Request file system permissions
-    //         const { status } = await MediaLibrary.requestPermissionsAsync();
-    
-    //         if (status === 'granted') {
-    //           // Create a new folder (directory) to store the QR code
-    //         //   const folderName = 'QRCodeFolder';
-    //         //   const folderInfo = await FileSystem.getInfoAsync(folderName);
-    //         //   if (!folderInfo.exists) {
-    //         //     await FileSystem.makeDirectoryAsync(folderName);
-    //         //   }
-    
-    //           // Generate a unique filename for the QR code
-    //           const fileName = `QRCode_${Date.now()}.jpg`;
-    //           const newPath = `${"Download"}/${fileName}`;
-    
-    //           // Move the captured image to the new folder with the new name
-    //           await FileSystem.moveAsync({
-    //             from: uri,
-    //             to: newPath,
-    //           });
-    
-    //           // Notify the user that the image has been saved
-    //           alert(`QR code saved as ${fileName} in ${folderName}`);
-    //         } else {
-    //           alert('Permission to access the file system was denied.');
-    //         }
-    //       } catch (error) {
-    //         console.error('Error saving QR code:', error);
-    //       }
-    //     }
-    //   };
-
-
     return (
         <>
             <View style={styles.container}>
@@ -155,7 +54,7 @@ const QRcode = () => {
                         <QRCode
                             value={data}
                             size={200}
-                            color="black"
+                            color="green"
                             backgroundColor="white"
                         />
                     </View>
