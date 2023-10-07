@@ -75,9 +75,15 @@ function NotificationScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      {notifications.map(notification => (
-        <NotificationItem key={notification.id} notification={notification} />
-      ))}
+      {notifications.length === 0 ? (
+        <View style={styles.noNotificationsContainer}>
+          <Text style={styles.noNotificationsText}>No notifications available.</Text>
+        </View>
+      ) : (
+        notifications.map(notification => (
+          <NotificationItem key={notification.id} notification={notification} />
+        ))
+      )}
     </View>
   );
 }
@@ -120,6 +126,16 @@ const styles = StyleSheet.create({
   normalText: {
     fontSize: 16,
     color: '#888', // Change normal text color
+  },
+  noNotificationsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  noNotificationsText: {
+    fontSize: 16,
+    color: '#888',
+    textAlign: 'center',
   },
 });
 
