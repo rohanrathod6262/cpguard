@@ -21,7 +21,7 @@ const AddNewVeh = () => {
         <View style={styles.header}>
 
           <Image
-            source={{uri:'https://png.pngtree.com/png-clipart/20191121/original/pngtree-vector-car-icon-png-image_5159269.jpg'}}
+source={require('../assets/blackcar.jpg')}
             style={styles.image}
           />
         </View>

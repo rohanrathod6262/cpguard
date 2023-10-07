@@ -63,17 +63,18 @@ function NotificationScreen({ route }) {
     {
       id: 1,
       headline: 'New Notification 1',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text: 'Message from Rajesh Rathod.',
     },
     {
       id: 2,
       headline: 'New Notification 2',
-      text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      text: 'Message from Pravin Pimpale.',
     },
     // Add more notifications as needed
   ];
 
   return (
+   
     <View style={styles.container}>
       {notifications.map(notification => (
         <NotificationItem key={notification.id} notification={notification} />
